@@ -32,15 +32,15 @@ def clear():
 		strip.setPixelColor(i,0)
 		strip.show()
 
-def Blue():
+def blue():
         strip.setPixelColorRGB(0, 0,0,255) 
         strip.show()
 
-def Green():
+def green():
         strip.setPixelColorRGB(0, 0,255,0) 
         strip.show()
 
-def Red():
+def red():
         strip.setPixelColorRGB(0, 255,0,0) 
         strip.show()        
 
