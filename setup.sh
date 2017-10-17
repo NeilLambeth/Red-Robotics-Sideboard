@@ -42,3 +42,5 @@ sudo sed -i -e '$i #start Pgpio deamon\nsudo pigpiod\n' /etc/rc.local
 
 sudo sed -i -e '$i #start reset_shutdown script\nsudo python /home/pi/reset_shutdown.py&' /etc/rc.local
 
+reboot
+
