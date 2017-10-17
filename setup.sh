@@ -1,9 +1,9 @@
-#Red Robotics set up script
+#Red Robotics Sideboard V1.0 set up script
 
 #Neopixel set up taken from the original Adafruit tutorial: 
 #https://learn.adafruit.com/neopixels-on-raspberry-pi/software  
 
-
+#Uses the pigpio library: http://abyz.co.uk/rpi/pigpio/  
 
 
 cd 
@@ -12,6 +12,7 @@ printf "Upgrade"
 
 sudo apt-get install python3-dev python-dev python-pip python3-pip joystick -y
 sudo pip3 install evdev
+sudo pip install evdev
 
 sudo apt-get install build-essential git scons swig -y
 
