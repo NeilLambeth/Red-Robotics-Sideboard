@@ -11,7 +11,7 @@ print("neopixels loaded")
 
 
 # LED strip configuration:
-LED_COUNT      = 1     # Number of LED pixels.
+LED_COUNT      = 9     # Number of LED pixels.
 LED_PIN        = 12      # GPIO pin connected to the pixels (18 uses PWM!).
 #LED_PIN        = 10      # GPIO pin connected to the pixels (10 uses SPI /dev/spidev0.0).
 LED_FREQ_HZ    = 800000  # LED signal frequency in hertz (usually 800khz)
@@ -32,15 +32,15 @@ def clear():
 		strip.setPixelColor(i,0)
 		strip.show()
 
-def blue():
+def Blue():
         strip.setPixelColorRGB(0, 0,0,255) 
         strip.show()
 
-def green():
+def Green():
         strip.setPixelColorRGB(0, 0,255,0) 
         strip.show()
 
-def red():
+def Red():
         strip.setPixelColorRGB(0, 255,0,0) 
         strip.show()        
 
@@ -67,13 +67,14 @@ def fadeSingle():
                     time.sleep(0.01)        
 
 def knightRider():
-        for i in range(0,strip.numPixels()-1):
+    while True:
+        for i in range(1,strip.numPixels()-1):
                 strip.setPixelColorRGB(i, 255,0,0) 
                 strip.show()
                 time.sleep(0.1)
                 clear()
 			
-        for i in range(strip.numPixels()-1,0,-1):  
+        for i in range(strip.numPixels()-1,1,-1):  
                 strip.setPixelColorRGB(i, 255,0,0)
                 strip.show()
                 time.sleep(0.1)
