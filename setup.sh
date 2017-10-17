@@ -8,7 +8,6 @@
 
 cd 
 sudo apt-get update && sudo apt-get upgrade -y
-printf "Upgrade"
 
 sudo apt-get install python3-dev python-dev python-pip python3-pip joystick -y
 sudo pip3 install evdev
