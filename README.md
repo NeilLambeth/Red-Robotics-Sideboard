@@ -59,7 +59,7 @@ Right motor half speed forwards:
 `r_motor(50)`
 
 Right motor full speed backwards:  
-`r_motor(-50)`
+`r_motor(-100)`
 
 Right motor stop:  
 `r_motor(0)`
