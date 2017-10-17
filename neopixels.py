@@ -1,4 +1,5 @@
-# NeoPixel library strandtest example
+
+# Modified from the NeoPixel library strandtest example
 # Author: Tony DiCola (tony@tonydicola.com)
 #
 # Direct port of the Arduino NeoPixel library strandtest example.  Showcases
