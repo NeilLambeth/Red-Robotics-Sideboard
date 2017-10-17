@@ -23,8 +23,7 @@ This can take around 10 minutes on a Pi2 on a fresh install of Raspian Lite.
 Open up a python shell with:  
 `Sudo python`
 
-Load the neopixel module:
-
+Load the neopixel module:  
 `from neopixels import *`
 
 Then try these:
@@ -45,7 +44,7 @@ With eight led's attached - try:
 `knightRider()`
 
 To clear:  
-`clear()`    
+`clear()`  
 
   
 
@@ -53,29 +52,22 @@ To clear:
 
 `from sideboard import *`
 
-Right motor full speed forwards:
-
+Right motor full speed forwards:  
 `r_motor(100)` 
 
-Right motor half speed forwards:
-
+Right motor half speed forwards:  
 `r_motor(50)`
 
-Right motor full speed backwards:
-
+Right motor full speed backwards:  
 `r_motor(-50)`
 
-Right motor stop:
-
+Right motor stop:  
 `r_motor(0)`
 
-
-Left motor full speed forwards:
-
+Left motor full speed forwards:  
 `l_motor(100)`
 
-Left motor stop:
-
+Left motor stop:  
 `l_motor(0)`
 
   
