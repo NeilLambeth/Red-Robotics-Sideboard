@@ -66,7 +66,7 @@ while True:
               
           elif elaspedTime >3:
               print("Shutdown")
-              neopixels.Red()
+              neopixels.red()
               time.sleep(0.5)   
               neopixels.setColour(0,0,0,0)
               os.system('shutdown -h now')  # Shutdown
@@ -80,7 +80,7 @@ while True:
               
               
       elif elaspedTime >3:
-          neopixels.Red()  
+          neopixels.red()  
           #print("Long Press")
           
                       
