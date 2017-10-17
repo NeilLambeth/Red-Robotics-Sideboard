@@ -8,7 +8,20 @@ button = 8
 buttonPress = False
 startTime = 0
 elaspedTime = 0
+
+#os.system('sudo pigpiod')
  
+neopixels.red()
+time.sleep(.5)
+
+neopixels.green()
+time.sleep(.5)
+
+neopixels.blue()
+time.sleep(.5)
+
+neopixels.clear()
+
 #connect to pigpiod daemon
 pi = pigpio.pi()
  
