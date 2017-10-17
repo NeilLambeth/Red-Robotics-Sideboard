@@ -6,7 +6,8 @@ Simple python commands for motor control and Neopixels.
 
 
 
-##Installation:
+
+## Installation:
 
 In the Raspberry Pi terminal type:
 
@@ -16,7 +17,8 @@ This can take around 10 minutes on a Pi2 on a fresh install of Raspian Lite.
 
 
 
-##Basic usage:
+
+## Basic usage:
 
 Open up a python shell with:  
 `Sudo python`
@@ -43,10 +45,11 @@ With eight led's attached - try:
 `knightRider()`
 
 To clear:  
-`clear()`  
+`clear()`    
 
+  
 
-##Motors
+## Motors
 
 `from sideboard import *`
 
@@ -75,8 +78,9 @@ Left motor stop:
 
 `l_motor(0)`
 
+  
 
-##Reset/Shutdown switch
+## Reset/Shutdown switch
 
 Short press- less than a second: LED will just flash yellow
 
