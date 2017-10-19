@@ -9,12 +9,12 @@ Simple python commands for motor control and Neopixels.
 
 ## Installation:
 
-In the Raspberry Pi terminal type:
+In the Raspberry Pi terminal, copy and paste:
 
 `curl -L https://raw.githubusercontent.com/NeilLambeth/Red-Robotics-Sideboard/master/setup.sh | bash`
 
 This can take around 10 minutes on a Pi2 on a fresh install of Raspian Lite.  
-
+On a PiZero it takes about 35 minutes.
 
 
 
@@ -24,22 +24,23 @@ Open up a python shell with:
 `sudo python`
 
 Load the neopixel module:  
-`from neopixels import *`
+`from neopixels import *`  
 Wait for the neopixels module to load
 
 
 To set the on-board neopixel to full red type:
 
-`red()`  
+`red()`
+
 This also works with blue and green:
 
 `blue()`
 
 `green()`  
 
-If you want different colours, use: 
-`setColour(0,128,0,128)`
-This will give you purple. The first value is the position of the neopixel (0 for the one on the Sideboard).
+If you want different colours, use:  
+`setColour(0,128,0,128)`  
+This will give you purple. The first value is the position of the neopixel (0 for the one on the Sideboard).  
 The next three numbers are the red, green and blue values.
 
 For white:  
