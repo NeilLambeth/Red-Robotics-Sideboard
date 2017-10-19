@@ -49,7 +49,7 @@ def setColour(P,R,G,B):
         strip.setPixelColorRGB(P,R,G,B) 
         strip.show()
 
-def fadeSingle():
+def heartbeat():
         red = 0
         while True:
                 #Fade up one red LED
