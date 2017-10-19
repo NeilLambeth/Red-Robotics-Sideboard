@@ -1,7 +1,7 @@
 import time
 import pigpio
 
-# Set up GPIO
+# Setup GPIO
 dira = 23
 pwma = 18
  
@@ -28,11 +28,11 @@ pi.set_mode(pwmb, pigpio.OUTPUT)
 
 pi.write(dira, 0)
 pi.write(dirb, 0)
-#time.sleep(1)
 pi.set_PWM_frequency(pwma, 100)
 pi.set_PWM_frequency(pwmb, 100)
 
 print("Sideboard loaded")
+
 
         
 def r_motor(rMotor):   
@@ -41,14 +41,15 @@ def r_motor(rMotor):
             if rMotor > 0:  
                 pi.write(dira, FWD)  # Go forwards
                 RM = rMotor
+                print ("Right Motor = "),(RM)
             elif rMotor < 0:  
                 pi.write(dira, BWD)  # Go backwards
                 RM = abs(rMotor)  # Make positive
+                print("Right Motor = -"),(RM)
             else:
-                #print("R Stop")
+                print("Right Stop")
                 RM = 0  # Stop
             
-            print("Right Motor = "),(RM)
             pi.set_PWM_dutycycle(pwma,RM)
 
 
@@ -57,19 +58,20 @@ def l_motor(lMotor):
             if lMotor > 0:
                 pi.write(dirb, FWD)  # Go forwards
                 LM = lMotor
+                print("Left Motor  = "),(LM)
             elif lMotor < 0:  
                 pi.write(dirb, BWD)  # Go backwards
                 LM = abs(lMotor)  # Make positive
+                print("Left Motor  = -"),(LM)
             else:
-                #print("L Stop")
+                print("Left Stop")
                 LM = 0  # Stop  
    
-            print("Left Motor  = "),(LM)
             pi.set_PWM_dutycycle(pwmb,LM)   
             
-            print("")
             
-def stop(): 
+            
+def Stop(): 
             pi.set_PWM_dutycycle(pwma,0)
             pi.set_PWM_dutycycle(pwmb,0)
 
