@@ -21,29 +21,50 @@ This can take around 10 minutes on a Pi2 on a fresh install of Raspian Lite.
 ## Basic usage:
 
 Open up a python shell with:  
-`Sudo python`
+`sudo python`
 
 Load the neopixel module:  
 `from neopixels import *`
+Wait for the neopixels module to load
 
-Then try these:
 
-`red()`
+To set the on-board neopixel to full red type:
+
+`red()`  
+This also works with blue and green:
 
 `blue()`
 
 `green()`  
 
-To mix colours -  
-`setColour(0,255,0,255)`  (LED number, red value, green value, blue value)
+If you want different colours, use: 
+`setColour(0,128,0,128)`
+This will give you purple. The first value is the position of the neopixel (0 for the one on the Sideboard).
+The next three numbers are the red, green and blue values.
 
+For white:  
+`setColour(0,255,255,255)`
+
+Orange:  
+`setColour(0,255,165,000)`
+
+Yellow:  
+`setColour(0,255,255,0)`  
+    
+### Other neopixel commands
+
+You can fade red up and down with:  
+`heartbeat()`
+__Ctrl + c__ to stop
 
 Attach more Neopixels to the 3pin header, pin closest to the led is +v then Data then Ground. 
 
 With eight led's attached - try:  
 `knightRider()`
+__Ctrl + c__ to stop
 
-To clear:  
+
+To turn all neopixels off:  
 `clear()`  
 
   
