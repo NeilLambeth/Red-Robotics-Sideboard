@@ -15,6 +15,7 @@ sudo pip install evdev
 
 sudo apt-get install build-essential git scons swig -y
 
+sudo rm -rf Red-Robotics-Sideboard
 git clone https://github.com/NeilLambeth/Red-Robotics-Sideboard.git
 cd Red-Robotics-Sideboard
 cp * /home/pi
@@ -27,19 +28,35 @@ scons
 cd python
 sudo python setup.py install
 
-cd
-rm pigpio.zip
-sudo rm -rf PIGPIO
-wget abyz.co.uk/rpi/pigpio/pigpio.zip
-unzip pigpio.zip
-cd PIGPIO
-make
-sudo make install
+
 
 cd
-sudo sed -i -e '$i #start Pgpio deamon\nsudo pigpiod\n' /etc/rc.local
 
-sudo sed -i -e '$i #start reset_shutdown script\nsudo python /home/pi/reset_shutdown.py&' /etc/rc.local
+if grep -Fq "pigpiod" "/etc/rc.local"
+then
+    echo "Pigpio already installed"
+else
+    echo "Installing shutdown script"
+    cd
+    rm pigpio.zip
+    sudo rm -rf PIGPIO
+    wget abyz.co.uk/rpi/pigpio/pigpio.zip
+    unzip pigpio.zip
+    cd PIGPIO   
+    make
+    sudo make install
+    rm pigpio.zip
+    sudo sed -i -e '$i #start Pigpio deamon\nsudo pigpiod\n' /etc/rc.local
+fi
+
+
+if grep -Fq "reset_shutdown.py" "/etc/rc.local"
+then
+    echo "Shutdown script already running"
+else
+    echo "Installing shutdown script" 
+    sudo sed -i -e '$i #start reset_shutdown script\nsudo python /home/pi/reset_shutdown.py&' /etc/rc.local
+fi
 
 sudo reboot
 
