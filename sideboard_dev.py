@@ -45,24 +45,52 @@ print("Sideboard loaded")
 def servo0(pos0):
     if pos0 >= 0:
         print (pos0)
-        pos0 = ((pos0 * 11.1) + 1500 + servo0_trim)
+        pos0 = ((pos0 * 11.1) + 1500)
         print (pos0)
         pi.set_servo_pulsewidth(servo_0, pos0)
     
     elif pos0 < 0:
-        print ("neg")
         print (pos0)
-        pos0 = (servo0_trim + 1500 - (abs(pos0) * 11.1))
+        pos0 = (1500 - (abs(pos0) * 11.1))
         print (pos0)
         pi.set_servo_pulsewidth(servo_0, pos0)
 
 
-def servo1(pos1):
-    pi.set_servo_pulsewidth(servo_1, pos1)
+def servo0_P(pos0):
+    pi.set_servo_pulsewidth(servo_0, pos0)
 
 def servo0_off():
     pi.set_mode(servo_0, pigpio.INPUT)
-        
+
+
+
+
+ 
+def servo1(pos1):
+    if pos1 >= 0:
+        print (pos1)
+        pos1 = ((pos1 * 11.1) + 1500)
+        print (pos1)
+        pi.set_servo_pulsewidth(servo_1, pos1)
+    
+    elif pos1 < 0:
+        print (pos1)
+        pos1 = (1500 - (abs(pos1) * 11.1))
+        print (pos1)
+        pi.set_servo_pulsewidth(servo_1, pos1)
+
+
+def servo1_P(pos1):
+    pi.set_servo_pulsewidth(servo_1, pos1)
+
+def servo1_off():
+    pi.set_mode(servo_1, pigpio.INPUT)
+
+
+
+
+
+       
 def r_motor(rm):   
 
             if rm > 100:  # Make sure the value sent to the motor is 100 or less
