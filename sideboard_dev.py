@@ -42,49 +42,64 @@ pi.set_mode(servo_1, pigpio.OUTPUT)
 
 print("Sideboard loaded")
 
+
+
+
 def servo0(pos0):
-    if pos0 >= 0:
+    if pos0 >= 0 and pos0 <91:
         print (pos0)
         pos0 = ((pos0 * 11.1) + 1500)
         print (pos0)
         pi.set_servo_pulsewidth(servo_0, pos0)
     
-    elif pos0 < 0:
+    elif pos0 < 0 and pos0 >-91:
         print (pos0)
         pos0 = (1500 - (abs(pos0) * 11.1))
         print (pos0)
         pi.set_servo_pulsewidth(servo_0, pos0)
 
+    else:
+        print ("Out Of Range!")
 
 def servo0_P(pos0):
-    pi.set_servo_pulsewidth(servo_0, pos0)
+    if pos0 >499 and pos0 <2501:
+        pi.set_servo_pulsewidth(servo_0, pos0)
+
+    else:
+        print ("Out Of Range!")
 
 def servo0_off():
-    pi.set_mode(servo_0, pigpio.INPUT)
-
+    pi.set_servo_pulsewidth(servo_0, 0)
 
 
 
  
 def servo1(pos1):
-    if pos1 >= 0:
+    if pos1 >= 0 and pos1 <91:
         print (pos1)
         pos1 = ((pos1 * 11.1) + 1500)
         print (pos1)
         pi.set_servo_pulsewidth(servo_1, pos1)
     
-    elif pos1 < 0:
+    elif pos1 < 0 and pos1 >-91:
         print (pos1)
         pos1 = (1500 - (abs(pos1) * 11.1))
         print (pos1)
         pi.set_servo_pulsewidth(servo_1, pos1)
 
+    else:
+        print ("Out Of Range!")
+
 
 def servo1_P(pos1):
-    pi.set_servo_pulsewidth(servo_1, pos1)
+    if pos1 >499 and pos1 <2501:
+        pi.set_servo_pulsewidth(servo_1, pos1)
+
+    else:
+        print ("Out Of Range!")
 
 def servo1_off():
-    pi.set_mode(servo_1, pigpio.INPUT)
+    pi.set_servo_pulsewidth(servo_1, 0)
 
 
 
@@ -122,6 +137,9 @@ def r_motor(rm):
             pi.set_PWM_dutycycle(pwma,RM)
 
 
+
+
+
 def l_motor(lm):  
 
             if lm > 100:  # Make sure the value sent to the motor is 100 or less
@@ -151,7 +169,8 @@ def l_motor(lm):
    
             pi.set_PWM_dutycycle(pwmb,LM)   
             
-            
+  
+          
             
 def Stop(): 
             pi.set_PWM_dutycycle(pwma,0)
