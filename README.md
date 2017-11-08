@@ -92,7 +92,41 @@ Left motor full speed forwards:
 Left motor stop:  
 `l_motor(0)`
 
-  
+## Servos (Headboard only)  
+
+`from sideboard import *`
+
+You can connect two servos - servo0 and servo1
+
+Set the angle of the servo directly - to set the servo to the centre position:  
+`servo0(0)`
+
+Or for servo1:  
+`servo1(0)`
+
+90 degrees:  
+`servo0(90)`
+
+-45 degrees  
+`servo0(-45)`
+
+If you prefer, you can set the servo position by the pulse width.
+Minimum value is 500, max is 2500.
+
+Centre:  
+`servo0_P(1500)`
+
++90 degrees:  
+`servo0_P(500)`
+
+-45 degrees:  
+`servo0_P(2000)`
+
+-90 degrees:  
+`servo0_P(2500)`
+
+Cut the power to the servo with:  
+`servo0_off()`
 
 ## Reset/Shutdown switch
 
