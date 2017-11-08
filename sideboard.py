@@ -47,15 +47,15 @@ print("Sideboard loaded")
 
 def servo0(pos0):
     if pos0 >= 0 and pos0 <91:
-        print (pos0)
-        pos0 = ((pos0 * 11.1) + 1500)
-        print (pos0)
+        print ("servo0 ="),(pos0)
+        pos0 = 1500 - (pos0 * 11.1)
+        #print (pos0)
         pi.set_servo_pulsewidth(servo_0, pos0)
     
     elif pos0 < 0 and pos0 >-91:
-        print (pos0)
-        pos0 = (1500 - (abs(pos0) * 11.1))
-        print (pos0)
+        print ("servo0 ="),(pos0)
+        pos0 = (abs(pos0) * 11.1) + 1500
+        #print (pos0)
         pi.set_servo_pulsewidth(servo_0, pos0)
 
     else:
@@ -63,6 +63,7 @@ def servo0(pos0):
 
 def servo0_P(pos0):
     if pos0 >499 and pos0 <2501:
+        print ("servo0 ="),(pos0)
         pi.set_servo_pulsewidth(servo_0, pos0)
 
     else:
@@ -70,21 +71,22 @@ def servo0_P(pos0):
 
 def servo0_off():
     pi.set_servo_pulsewidth(servo_0, 0)
+    print ("servo0 off")
 
 
 
  
 def servo1(pos1):
     if pos1 >= 0 and pos1 <91:
-        print (pos1)
-        pos1 = ((pos1 * 11.1) + 1500)
-        print (pos1)
+        print ("servo1 ="),(pos1)
+        pos1 = 1500 - (pos1 * 11.1)
+        #print (pos1)
         pi.set_servo_pulsewidth(servo_1, pos1)
     
     elif pos1 < 0 and pos1 >-91:
-        print (pos1)
-        pos1 = (1500 - (abs(pos1) * 11.1))
-        print (pos1)
+        print ("servo1 ="),(pos1)
+        pos1 = (abs(pos1) * 11.1) + 1500
+        #print (pos1)
         pi.set_servo_pulsewidth(servo_1, pos1)
 
     else:
@@ -93,6 +95,7 @@ def servo1(pos1):
 
 def servo1_P(pos1):
     if pos1 >499 and pos1 <2501:
+        print ("servo1 ="),(pos1)
         pi.set_servo_pulsewidth(servo_1, pos1)
 
     else:
@@ -100,6 +103,7 @@ def servo1_P(pos1):
 
 def servo1_off():
     pi.set_servo_pulsewidth(servo_1, 0)
+    print ("servo1 off")
 
 
 
@@ -122,16 +126,16 @@ def r_motor(rm):
             if rMotor > 0:  
                 pi.write(dira, FWD)  # Go forwards
                 RM = rMotor
-                print("Right Motor ="),(rm)
+                print("Right Motor ="),(rm),("\r")
                 #print("Actual = "),(RM)
 
             elif rMotor < 0:  
                 pi.write(dira, BWD)  # Go backwards
                 RM = abs(rMotor)  # Make positive
-                print("Right Motor ="),(rm)
+                print("Right Motor ="),(rm),("\r")
                 #print("Actual = -"),(RM)
             else:
-                print("Right Stop")
+                print("Right Stopstop\r")
                 RM = 0  # Stop            
  
             pi.set_PWM_dutycycle(pwma,RM)
@@ -156,15 +160,15 @@ def l_motor(lm):
             if lMotor > 0:
                 pi.write(dirb, FWD)  # Go forwards
                 LM = lMotor
-                print("Left Motor  ="),(lm)
+                print("Left Motor  ="),(lm),("\r")
                 #print("Actual = "),(LM)
             elif lMotor < 0:  
                 pi.write(dirb, BWD)  # Go backwards
                 LM = abs(lMotor)  # Make positive
-                print("Left Motor  ="),(lm)
+                print("Left Motor  ="),(lm),("\r")
                 #print("Actual = -"),(LM)
             else:
-                print("Left Stop")
+                print("Left Stop\r")
                 LM = 0  # Stop  
    
             pi.set_PWM_dutycycle(pwmb,LM)   
